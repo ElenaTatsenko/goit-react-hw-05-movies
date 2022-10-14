@@ -1,6 +1,6 @@
 import { AiOutlineHome, } from 'react-icons/ai';
 import {TbMovie} from 'react-icons/tb'
-import { NavItem, Text, Header, Box } from './AppBar.styled'
+import { NavItem, Header, Text } from './AppBar.styled'
 
 
 const navItems = [
@@ -11,11 +11,18 @@ const navItems = [
 const AppBar = () => {
     return (
         <Header>
-            <Box as='nav'>
-                {navItems.map(({ href, text, icon: Icon }) => <li key={href}><NavItem to={href} end><Icon size={24} /><Text>{text}</Text></NavItem></li>)}
-            </Box>
+            
+            {navItems.map(({ href, text, icon: Icon }) =>
+                
+                <NavItem key={href} to={href} end>
+                    <Icon size={24} />
+                    <Text>{text}</Text>
+                </NavItem>
+      
+               )}
+            
         </Header>
-    )
+   )
 }
 
 export default AppBar;
