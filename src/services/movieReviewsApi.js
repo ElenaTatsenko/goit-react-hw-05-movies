@@ -4,9 +4,12 @@ export async function getMovieReviews() {
   
 
   const response = await fetch(`${url}?api_key=${key}&language=en-US&page=1`);
-  const data = await response.json();
+  if (response.ok) {
+    const data = await response.json();
 
   return data.results;
+  }
+  return Promise.reject(new Error(`Someting wrong`))
 
 };
 
