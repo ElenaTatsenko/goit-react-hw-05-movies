@@ -11,7 +11,7 @@ const CastCard = ({ cast }) => {
             <CastItem key={id}>
                 <CastPoster
                   src={
-                    profile_path ? `https://image.tmdb.org/t/p/w500/${profile_path}` : "https://ru.depositphotos.com/31468817/stock-photo-coming-soon-sign.html"
+                    profile_path ? `https://image.tmdb.org/t/p/w500/${profile_path}` : "https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg"
                   }
                   alt={character}
               />
