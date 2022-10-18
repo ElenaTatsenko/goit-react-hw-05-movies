@@ -1,11 +1,10 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate   } from 'react-router-dom'
 import Home from 'pages/Home/Home';
 import Movies from 'pages/Movies/Movies';
-
-//import { ToastContainer } from 'react-toastify'
-
-
+import MovieDetails from 'pages/MovieDetails/MovieDetails'
 import Layout from '../Layout/Layout'
+import Cast from 'pages/Cast/Cast'
+import Reviews from 'pages/Reviews/Reviews';
 
 export const App = () => {
   return (
@@ -14,7 +13,11 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path='movies' element={<Movies />} />
-          
+          <Route path="movies/:movieId" element={<MovieDetails />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+          <Route path="*" element={<Navigate to="/" />} />
         </Route>
          
      </Routes>
@@ -22,15 +25,3 @@ export const App = () => {
     </>
   );
 };
-//<Routes>
-   //     <Route path="/" element={<Layout />}>
-   //       <Route index element={<div>Home</div>} />
-   //       <Route path="movies" element={<div>Movies</div>}></Route>
-    //      <Route path="movies/:movieId" element={<div>MovieDeteils</div>}>
-     //         <Route path="cast" element={<div>Cast</div>} />
-     //         <Route path="reviews" element={<div>Reviews</div>} />
-     //       </Route>
-     //       <Route path="*" element={<div to="/">Navigate</div>} />
-     //   </Route>
-    //  </Routes>
-    //  <ToastContainer></ToastContainer>

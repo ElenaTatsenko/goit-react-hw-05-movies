@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Loader from "components/Loader/Loader"; 
 import { getTrends } from "services/trendsApi";
-import MovieList from "MovieList/MovieList";
+import MovieList from "components/MovieList/MovieList";
 import { Title } from "./Home.styled";
 
 const Home = () => {

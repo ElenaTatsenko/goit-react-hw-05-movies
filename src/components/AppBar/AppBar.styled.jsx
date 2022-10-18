@@ -31,4 +31,3 @@ export const Header = styled.header`
   background-color: rgb(178, 236, 249);
 `
 
-export const Box = styled.div

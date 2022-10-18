@@ -1,13 +1,13 @@
-export async function getMovieCast() {
+export async function getMovieCast(movieId) {
   const key = 'f637ff1bcaf74a417438f57fb9f0b1d7';
-  const url = 'https://api.themoviedb.org/3/movie/{movie_id}/credits';
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits`;
   
 
   const response = await fetch(`${url}?api_key=${key}&language=en-US`);
   if (response.ok) {
-    const data = await response.json();
+    const movie = await response.json();
 
-  return data.results;
+  return movie.cast;
   }
   return Promise.reject(new Error(`Someting wrong`))
 
