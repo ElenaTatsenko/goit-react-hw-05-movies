@@ -13,5 +13,5 @@ export const ReviewContent = styled.p`
   text-align: justify;
 `;
 
-export const RewievList = styled.ul`
+export const RewievList = styled.li`
 padding: 20px;`
